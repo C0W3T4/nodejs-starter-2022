@@ -1,0 +1,11 @@
+{
+  "name": "nodejs-starter-2022",
+  "version": "1.0.0",
+  "description": "Starting with Nodejs in 2022",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cometa",
+  "license": "MIT"
+}
