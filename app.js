@@ -14,6 +14,14 @@ fileSystem.readFile("products.json", "utf-8", (error, data) => {
   : products = JSON.parse(data);
 });
 
+function writeProductsFile() {
+  fileSystem.writeFile("products.json", JSON.stringify(products), (error) => {
+    error 
+    ? console.error("Error: ", error) 
+    : console.log("Changes have been made successfully!");
+  });
+}
+
 app.get('/', (request, response) => {
   return response.json({
     message: 'Home route!'
@@ -87,14 +95,6 @@ app.delete('/products/:id', (request, response) => {
     message: 'The product has been deleted successfully!'
   });
 });
-
-function writeProductsFile() {
-  fileSystem.writeFile("products.json", JSON.stringify(products), (error) => {
-    error 
-    ? console.error("Error: ", error) 
-    : console.log("Changes have been made successfully!");
-  });
-}
 
 app.get('/users', (request, response) => {
   return response.json({
